@@ -1,68 +1,4 @@
-// // frontend/src/pages/auth/Login.jsx
-// import React, { useState } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-// import api from "../../api/api";
-// import { useAuth } from "../../context/AuthProvider";
 
-// export default function Login() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [err, setErr] = useState("");
-//   const navigate = useNavigate();
-//   const { login } = useAuth();
-
-//   async function submit(e) {
-//     e.preventDefault();
-//     setErr("");
-//     try {
-//       const res = await api.post("/api/auth/login", { email, password });
-//       // res.data = { user, token }
-//       if (res.data && res.data.token) {
-//         login(res.data.user, res.data.token);
-//         // store token for API calls
-//         localStorage.setItem("token", res.data.token);
-//         navigate("/dashboard");
-//       } else {
-//         setErr("Login failed");
-//       }
-//     } catch (err) {
-//       setErr(err?.response?.data?.message || err.message || "Login failed");
-//     }
-//   }
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center">
-//       <div className="card p-8 rounded-2xl w-full max-w-md">
-//         <h2 className="text-2xl font-bold mb-4">Login</h2>
-//         <form onSubmit={submit} className="space-y-4">
-//           <input
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//             placeholder="Email"
-//             className="w-full p-2 rounded bg-slate-800 border border-slate-700"
-//           />
-//           <input
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             type="password"
-//             placeholder="Password"
-//             className="w-full p-2 rounded bg-slate-800 border border-slate-700"
-//           />
-//           {err && <div className="text-rose-400">{err}</div>}
-//           <button className="w-full bg-teal-500 text-black p-2 rounded">
-//             Login
-//           </button>
-//         </form>
-//         <p className="mt-4 text-sm">
-//           Don't have an account?{" "}
-//           <Link to="/signup" className="text-teal-300">
-//             Sign up
-//           </Link>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
 
 // frontend/src/pages/auth/Login.jsx
 import React, { useState } from "react";
@@ -71,7 +7,7 @@ import { motion } from "framer-motion";
 import api from "../../api/api";
 import { useAuth } from "../../context/AuthProvider";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const API = import.meta.env.VITE_API_URL;
 
 export default function Login() {
   const { login } = useAuth();
