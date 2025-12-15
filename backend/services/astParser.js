@@ -1,17 +1,16 @@
-// backend/services/astParser.js
 const fs = require("fs-extra");
 const path = require("path");
 const parser = require("@babel/parser");
 
-/* ===================== LIMITS ===================== */
-const MAX_FILES = 500; // max source files to parse
+
+const MAX_FILES = 500; 
 const MAX_FILE_SIZE = 200 * 1024; // 200 KB per file
 const MAX_DEPTH = 8; // folder depth limit
 
 const ALLOWED_EXT = [".js", ".jsx", ".ts", ".tsx"];
 const IGNORE_DIRS = ["node_modules", ".git", "__pycache__", "dist", "build"];
 
-/* ===================== MAIN ===================== */
+
 async function parseRepoToDocs(rootDir) {
   const summaries = [];
   let fileCount = 0;
@@ -46,7 +45,7 @@ async function parseRepoToDocs(rootDir) {
           continue;
         }
 
-        // skip large files
+       
         if (stat.size > MAX_FILE_SIZE) continue;
 
         let code;
@@ -56,14 +55,14 @@ async function parseRepoToDocs(rootDir) {
           continue;
         }
 
-        // Try parsing, but NEVER crash
+       
         try {
           parser.parse(code, {
             sourceType: "unambiguous",
             plugins: ["jsx", "classProperties", "typescript"],
           });
         } catch {
-          // Ignore parse errors
+        
         }
 
         summaries.push({
