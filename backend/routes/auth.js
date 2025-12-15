@@ -1,4 +1,3 @@
-// const express = require("express");
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -12,7 +11,7 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "7d";
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 console.log("🔥 auth.js loaded");
 
-/* ===================== SIGNUP ===================== */
+
 router.post("/signup", async (req, res) => {
   try {
     const { name, email, password } = req.body || {};
@@ -56,7 +55,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-/* ===================== LOGIN ===================== */
+
 router.post("/login", async (req, res) => {
   try {
     console.log("login successful1");
@@ -92,11 +91,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-/* ===================== GOOGLE / GITHUB OAUTH ===================== */
-/**
- * POST /api/auth/oauth
- * body: { email, name, avatar, provider }
- */
+
 router.post("/oauth", async (req, res) => {
   try {
     const { email, name, avatar, provider } = req.body || {};
