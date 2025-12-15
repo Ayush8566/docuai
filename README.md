@@ -113,3 +113,10 @@ GOOGLE_CALLBACK_URL=https://your-backend-url/api/auth/google/callback
 
 FRONTEND_URL=https://your-frontend-url
 OPENAI_API_KEY=your_openai_api_key
+
+## 🌐 Frontend Environment Variables
+
+Create a `.env` file in the frontend root:
+
+```env
+VITE_API_URL=https://your-backend-url
