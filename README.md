@@ -114,9 +114,57 @@ GOOGLE_CALLBACK_URL=https://your-backend-url/api/auth/google/callback
 FRONTEND_URL=https://your-frontend-url
 OPENAI_API_KEY=your_openai_api_key
 
-## 🌐 Frontend Environment Variables
 
-Create a `.env` file in the frontend root:
+---
 
-```env
+Frontend (.env)
 VITE_API_URL=https://your-backend-url
+
+🧪 How to Run Locally
+Backend
+cd backend
+npm install
+npm run dev
+
+Frontend
+cd frontend
+npm install
+npm run dev
+
+
+
+🚧 Future Improvements
+
+Support for more programming languages
+
+Export documentation as Markdown / PDF
+
+Versioned documentation history
+
+Team collaboration features
+
+CI/CD integration
+
+🏆 Why This Project Matters
+
+Solves a real developer pain point
+
+Demonstrates full-stack + AI skills
+
+Practical, scalable, and production-ready
+
+Saves time for individuals and teams
+
+👤 Author
+
+Ayush Kumar
+Computer Science Student
+GitHub: https://github.com/Ayush8566
+
+📜 License
+
+This project is licensed under the MIT License.
+
+
+---
+
