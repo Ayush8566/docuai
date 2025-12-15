@@ -18,7 +18,7 @@ router.post("/import", async (req, res) => {
     const owner = parts[0];
     const repo = parts[1];
 
-    // 1️⃣ get default branch
+
     const metaResp = await fetch(
       `https://api.github.com/repos/${owner}/${repo}`,
       {
@@ -38,7 +38,7 @@ router.post("/import", async (req, res) => {
     const meta = await metaResp.json();
     const branch = meta.default_branch;
 
-    // 2️⃣ download zip (server-side, no CORS)
+    
     const zipUrl = `https://codeload.github.com/${owner}/${repo}/zip/refs/heads/${branch}`;
     const zipResp = await fetch(zipUrl);
 
