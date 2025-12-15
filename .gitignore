@@ -1,5 +1,5 @@
 # node
-node_modules
+node_modules/
 .env
 .env.local
 
@@ -9,8 +9,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # build
-dist
-build
+dist/
+build/
 
 # OS
 .DS_Store
+
+# uploads & temp (IMPORTANT for your project)
+backend/temp/
+backend/uploads/
